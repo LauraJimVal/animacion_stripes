@@ -1,0 +1,80 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap');
+
+/* contenedor de la animación */
+
+.contenedor { 
+    display: flex; 
+    cursor: pointer;
+}
+
+/* contenedor de los bloques */
+
+.contenedor > article{
+    position: relative;
+    width: 20%;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Colores de los bloques */
+
+.bloque_1{
+    background-color:#244F75;
+}
+
+.bloque_2{
+    background-color:#60BFBF;
+}
+
+.bloque_3{
+    background-color:#8C4B7E;
+}
+.bloque_4{
+    background-color:#F8BB44;
+}
+.bloque_5{
+    background-color:#F24B4B;
+}
+
+/* Letras dentro de los bloques */
+
+h1{
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    margin-top: 48vh;
+    width: 100%;
+}
+
+/* Plano transparente */
+
+article::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: skew(30deg);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* animación del plano transparente */
+
+.bloque_1:hover::before,.bloque_2:hover::before,.bloque_3:hover::before,.bloque_4:hover::before,.bloque_5:hover::before{
+    animation: stripe1 0.1s ease-out;
+    animation-fill-mode: both;
+}
+
+@keyframes stripe1 {
+    0% {
+        -webkit-transform: translate3d(0, 0, -100%);
+        transform: translate3d(0, 0, -100%);
+    }
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
